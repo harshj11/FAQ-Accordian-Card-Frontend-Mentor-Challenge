@@ -28,6 +28,11 @@ body {
 
 .card {
     background-color: #fff;
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    
     border-radius: 2rem;
     
     margin: 6rem 1.5rem;
@@ -41,7 +46,7 @@ body {
 }
 
 .card__img img {
-    height: 10rem;
+    height: 11rem;
     width: auto;
 }
 
@@ -53,13 +58,18 @@ body {
     display: block;
     
     position: absolute;
-    top: 0;
+    top: -0.5rem;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .card__text {
     text-align: justify;
+}
+
+.card__text h1 {
+    margin: 5rem 0 2rem 0;
+    text-align: center;
 }
 
 .attribution {
@@ -73,6 +83,11 @@ body {
 
 @media (min-width: 48rem) {
     .card {
+        background-image: url("../images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -26.8rem -5rem;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -88,9 +103,11 @@ body {
 
         height: 8.75rem;
         width: 8.75rem;
+
         position: absolute;
-        top: 10.25rem;
         left: -4.25rem;
+
+        transform: translateY(27%);
         z-index: 1;
     }
 
@@ -117,6 +134,10 @@ body {
 
     .card__img, .card__text {
         flex: 1;
+    }
+
+    .card__text h1 {
+        margin: 0;
     }
     
 }
