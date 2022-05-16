@@ -8,6 +8,8 @@
     --gradient-soft-blue: hsl(240, 73%, 65%);
 }
 
+/* ========== DEFAULT STYLES ========== */
+
 html {
     font-size: 100%;
 }
@@ -20,11 +22,24 @@ body {
     background: linear-gradient(var(--gradient-soft-violet), var(--gradient-soft-blue));
     font-family: 'Kumbh Sans', sans-serif;
 
-    height: 100vh;
+    height: 110vh;
 
     margin: 0;
     padding: 0;
 }
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* ========== CARD-BOX ========== */
+
+.card__box {
+    display: none;
+}
+
+/* ========== CARD-STYLES ========== */
 
 .card {
     background-color: #fff;
@@ -37,12 +52,6 @@ body {
     
     margin: 6rem 1.5rem;
     padding: 2rem;
-
-    max-width: 45rem;
-}
-
-.card__box {
-    display: none;
 }
 
 .card__img img {
@@ -68,17 +77,85 @@ body {
 }
 
 .card__text h1 {
-    margin: 5rem 0 2rem 0;
+    margin: 5rem 0 1rem 0;
     text-align: center;
 }
 
+/* ========== ACCORDION STYLES ========== */
+
+.accordion {
+    margin: 0.5rem 0;
+}
+
+.accordion-item {
+    border-bottom: solid 1px var(--divider-blue);
+}
+
+.accordion-item:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-question {
+    margin: 0.8rem 0;
+}
+
+.accordion-question, .accordion-text {
+    font-size: 0.75rem;
+}
+
+.accordion-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-link p {
+    transition: font-weight 100ms ease-in-out;
+}
+
+.accordion-text {
+    height: 0;
+    overflow: hidden;
+    transition: height 500ms ease-in-out;
+}
+
+.arrow__img {
+    transform: rotate(-180deg);
+    transition: transform 500ms ease-in-out;
+}
+
+.accordion-item:target .accordion-text {
+    height: 5rem;
+}
+
+.accordion-item:target .arrow__img {
+    transform: rotate(0deg);
+}
+
+.accordion-item:target .accordion-link p {
+    font-weight: bold;
+}
+
 .attribution {
-    font-size: 11px;
+    font-size: 0.75rem;
     text-align: center;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: #ffffff;
+}
+
+@media (min-width: 37.5rem) {
+    .card {
+        margin: 6rem auto;
+        width: 32rem;
+        padding: 2.5rem;
+    }
+
+    .card__text h1 {
+        margin: 4rem 0 1rem 0;
+        text-align: center;
+    }
 }
 
 @media (min-width: 48rem) {
@@ -86,11 +163,14 @@ body {
         background-image: url("../images/bg-pattern-desktop.svg");
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: -26.8rem -5rem;
+        background-position: -26.8rem -6rem;
 
         display: flex;
         align-items: center;
         justify-content: center;
+
+        height: 35rem;
+        width: 45rem;
 
         margin: 5rem auto;
         padding: 2rem 2rem 2rem 0;
@@ -138,6 +218,7 @@ body {
 
     .card__text h1 {
         margin: 0;
+        text-align: left;
     }
     
 }
